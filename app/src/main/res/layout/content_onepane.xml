@@ -3,6 +3,7 @@
              android:id="@+id/fragment_container"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
+             android:layout_marginBottom="@dimen/bottom_navigation_height"
              android:layout_marginEnd="@dimen/deft_margin"
              android:layout_marginLeft="@dimen/deft_margin"
              android:layout_marginRight="@dimen/deft_margin"

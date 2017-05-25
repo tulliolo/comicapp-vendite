@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         bnw.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switchSection(item.getItemId());
                 return true;
             }
         });
@@ -68,10 +69,10 @@ public class MainActivity extends AppCompatActivity {
                 fragment = new CatalogueFragment();
                 break;
             case R.id.menu_item_sales:
-                fragment = new CatalogueFragment();
+                fragment = new SalesFragment();
                 break;
             case R.id.menu_item_reports:
-                fragment = new CatalogueFragment();
+                fragment = new ReportsFragment();
                 break;
             default:
                 fragment = new CatalogueFragment();
