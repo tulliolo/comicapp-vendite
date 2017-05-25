@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="it.tulliolo.comicappvendite.MainActivityFragment"
+    tools:context="it.tulliolo.comicappvendite.CatalogueFragment"
     tools:showIn="@layout/activity_main">
 
     <TextView
