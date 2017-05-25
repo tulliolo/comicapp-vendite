@@ -27,8 +27,20 @@
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
+        app:layout_anchor="@id/toolbar"
+        app:layout_anchorGravity="right|end|bottom"
         app:srcCompat="@android:drawable/ic_dialog_email"/>
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/colorPrimaryDark"
+        app:itemBackground="@color/colorPrimaryDark"
+        app:itemIconTint="@color/bottom_navigation_item"
+        app:itemTextColor="@color/bottom_navigation_item"
+        app:menu="@menu/bottom_navigation"></android.support.design.widget.BottomNavigationView>
 
 </android.support.design.widget.CoordinatorLayout>
