@@ -57,26 +57,11 @@ public class MainActivity extends AppCompatActivity {
 
     private void switchSection(@IdRes int id) {
         FragmentManager fm = getSupportFragmentManager();
-        Fragment fragment = null;
+        Fragment fragment = ComicAppFragmentFactory.newFragment(id);
         Fragment fragmentDetails = null;
 
         if (!isLayoutSingle()) {
             fragmentDetails = fm.findFragmentById(R.id.fragment_details_container);
-        }
-
-        switch (id) {
-            case R.id.menu_item_catalogue:
-                fragment = new CatalogueFragment();
-                break;
-            case R.id.menu_item_sales:
-                fragment = new SalesFragment();
-                break;
-            case R.id.menu_item_reports:
-                fragment = new ReportsFragment();
-                break;
-            default:
-                fragment = new CatalogueFragment();
-                break;
         }
 
         if (fragmentDetails != null) {

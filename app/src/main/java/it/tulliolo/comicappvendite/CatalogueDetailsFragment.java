@@ -11,7 +11,8 @@ import android.view.ViewGroup;
  */
 public class CatalogueDetailsFragment extends Fragment {
 
-    public CatalogueDetailsFragment() {
+    public static CatalogueDetailsFragment newInstance() {
+        return new CatalogueDetailsFragment();
     }
 
     @Override

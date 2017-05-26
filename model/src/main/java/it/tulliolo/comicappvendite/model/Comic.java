@@ -7,6 +7,7 @@ import org.greenrobot.greendao.annotation.Id;
 import org.greenrobot.greendao.annotation.Index;
 import org.greenrobot.greendao.annotation.NotNull;
 import org.greenrobot.greendao.annotation.ToMany;
+import org.greenrobot.greendao.annotation.Transient;
 
 import java.util.List;
 
@@ -15,23 +16,27 @@ import java.util.List;
  */
 
 @Entity(indexes = {
-        @Index(value = "series, number, edition", unique = true)
+        @Index(value = "series, code", unique = true)
 })
 public class Comic {
     @Id(autoincrement = true)
     private long id;
 
     @NotNull
+    @Index(unique = true)
+    private String key;
+
+    @NotNull
     private String series;
     @NotNull
-    private int number;
-    @NotNull
-    private String edition;
+    private String code;
 
     @NotNull
     private float price;
-    @NotNull
     private int quantity;
+
+    @Transient
+    private boolean soldOut;
 
     @ToMany(referencedJoinProperty = "comicId")
     private List<Sale> sales;
@@ -48,13 +53,13 @@ public class Comic {
     @Generated(hash = 1935326444)
     private transient ComicDao myDao;
 
-    @Generated(hash = 68581860)
-    public Comic(long id, @NotNull String series, int number,
-                 @NotNull String edition, float price, int quantity) {
+    @Generated(hash = 164609016)
+    public Comic(long id, @NotNull String key, @NotNull String series,
+                 @NotNull String code, float price, int quantity) {
         this.id = id;
+        this.key = key;
         this.series = series;
-        this.number = number;
-        this.edition = edition;
+        this.code = code;
         this.price = price;
         this.quantity = quantity;
     }
@@ -71,6 +76,14 @@ public class Comic {
         this.id = id;
     }
 
+    public String getKey() {
+        return this.key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
+
     public String getSeries() {
         return this.series;
     }
@@ -79,20 +92,12 @@ public class Comic {
         this.series = series;
     }
 
-    public int getNumber() {
-        return this.number;
+    public String getCode() {
+        return this.code;
     }
 
-    public void setNumber(int number) {
-        this.number = number;
-    }
-
-    public String getEdition() {
-        return this.edition;
-    }
-
-    public void setEdition(String edition) {
-        this.edition = edition;
+    public void setCode(String code) {
+        this.code = code;
     }
 
     public float getPrice() {

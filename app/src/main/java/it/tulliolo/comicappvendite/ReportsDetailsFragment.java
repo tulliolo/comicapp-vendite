@@ -11,7 +11,8 @@ import android.view.ViewGroup;
  */
 public class ReportsDetailsFragment extends Fragment {
 
-    public ReportsDetailsFragment() {
+    public static ReportsDetailsFragment newInstance() {
+        return new ReportsDetailsFragment();
     }
 
     @Override
